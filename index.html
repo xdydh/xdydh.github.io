@@ -11,6 +11,13 @@
 <meta name="theme-color" content="#333333">
 <link rel="stylesheet" href="./style.css">
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    function show(){
+        $.get( "https://luoli.site/img.php", function(data) {
+            $('#img').html('<img class="nya-btn hot badge" src="'+data.content+'" alt="小电影社区随机美图欣赏"/>');
+        }, "json" );
+    }
+</script>
 </head>
 <body class="index_page">
 <main>
@@ -51,12 +58,5 @@
 		<a href="/" class="nuxt-link-exact-active nuxt-link-active">@小电影社区导航</a>
 	</div>
 </main>
-<script type="text/javascript">
-    function show(){
-        $.get( "https://luoli.site/img.php", function(data) {
-            $('#img').html('<img class="nya-btn hot badge" src="'+data.content+'" alt="小电影社区随机美图欣赏"/>');
-        }, "json" );
-    }
-</script>
 </body>
 </html>
