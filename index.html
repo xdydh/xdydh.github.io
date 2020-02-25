@@ -39,8 +39,10 @@
 			</div>
 			<a href="https://www.xdysq.com/" target="_blank"  rel="nofollow" title="小电影社区" class="nya-btn hot badge">小电影社区</a>
 			<a href="https://luoli.site/" target="_blank"  rel="nofollow" title="萝莉网" class="nya-btn hot badge">萝莉网</a>
-			<!--<button class="nya-btn hot badge" οnclick="changePic()">小电影社区随机美图欣赏</button>-->
-			<img id="img" class="nya-btn hot badge" src="https://ww1.sinaimg.cn/large/0081Ila4gy1gc8kpv8zj0j30zk0nkgpx.jpg" referrerpolicy="no-referrer" alt="小电影社区随机美图欣赏"/>
+			<button class="nya-btn hot badge" onclick="show()">小电影社区随机美图欣赏</button>
+    			<div id="img">
+				<img class="nya-btn hot badge" src="https://ww1.sinaimg.cn/large/0081Ila4gy1gc8kpv8zj0j30zk0nkgpx.jpg" referrerpolicy="no-referrer" alt="小电影社区随机美图欣赏"/>
+			</div>
 			
 		</div>
 	</div>
@@ -48,5 +50,13 @@
 		<a href="/" class="nuxt-link-exact-active nuxt-link-active">@小电影社区导航</a>
 	</div>
 </main>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    function show(){
+        $.get( "https://luoli.site/img.php", function(data) {
+            $('#img').html('<img class="nya-btn hot badge" src="'+data.content+'" alt="小电影社区随机美图欣赏"/>');
+        }, "json" );
+    }
+</script>
 </body>
 </html>
